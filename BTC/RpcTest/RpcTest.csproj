@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5D94253-4062-4E75-B86E-95209785DE8E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RpcTest</RootNamespace>
+    <AssemblyName>RpcTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitcoinLib\Auxiliary\Encoders\ASCIIEncoder.cs" />
+    <Compile Include="BitcoinLib\Auxiliary\Encoders\DataEncoder.cs" />
+    <Compile Include="BitcoinLib\Auxiliary\Encoders\HexEncoder.cs" />
+    <Compile Include="BitcoinLib\Auxiliary\GlobalConstants.cs" />
+    <Compile Include="BitcoinLib\Auxiliary\Hashing.cs" />
+    <Compile Include="BitcoinLib\Auxiliary\UnixTime.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Base\CoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Base\CoinParameters.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Base\ICoinParameters.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Bitcoin\BitcoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Bitcoin\IBitcoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dallar\DallarConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dallar\IDallarConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dash\DashConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dash\IDashConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dogecoin\DogecoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Dogecoin\IDogecoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Litecoin\ILitecoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Litecoin\LitecoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Mogwaicoin\IMogwaicoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Mogwaicoin\MogwaicoinConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Smartcash\ISmartcashConstants.cs" />
+    <Compile Include="BitcoinLib\CoinParameters\Smartcash\SmartcashConstants.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\RawTransactions\RawTransactionExcessiveFeeException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\RawTransactions\RawTransactionInvalidAmountException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\RpcExtenderService\GetAddressBalanceException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\Rpc\RpcException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\Rpc\RpcInternalServerErrorException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\Rpc\RpcRequestTimeoutException.cs" />
+    <Compile Include="BitcoinLib\ExceptionHandling\Rpc\RpcResponseDeserializationException.cs" />
+    <Compile Include="BitcoinLib\ExtensionMethods\CoinServiceExtensionMethods.cs" />
+    <Compile Include="BitcoinLib\ExtensionMethods\DecimalExtensionMethods.cs" />
+    <Compile Include="BitcoinLib\Requests\AddNode\NodeAction.cs" />
+    <Compile Include="BitcoinLib\Requests\CreateRawTransaction\CreateRawTransactionInput.cs" />
+    <Compile Include="BitcoinLib\Requests\CreateRawTransaction\CreateRawTransactionOutput.cs" />
+    <Compile Include="BitcoinLib\Requests\CreateRawTransaction\CreateRawTransactionRequest.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SigHashType.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionInput.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionRequest.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionWithKeyInput.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionWithKeyRequest.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionWithWalletInput.cs" />
+    <Compile Include="BitcoinLib\Requests\SignRawTransaction\SignRawTransactionWithWalletRequest.cs" />
+    <Compile Include="BitcoinLib\Responses\Bridges\ITransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\CreateMultiSigResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\DecodeRawTransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\DecodeScriptResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\EstimateSmartFeeResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetAddedNodeInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetAddressesByLabelResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetAddressInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetBlockchainInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetBlockResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetBlockTemplateResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetChainTipsResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetFundRawTransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetMemPoolInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetMiningInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetNetTotalsResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetNetworkInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetPeerInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetRawMemPoolResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetRawTransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetTransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetTxOutSetInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\GetWalletInfoResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListAddressGroupingsResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListReceivedByAccountResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListReceivedByAddressResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListReceivedByLabelResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListSinceBlockResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListTransactionsResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ListUnspentResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\SharedComponents\Vin.cs" />
+    <Compile Include="BitcoinLib\Responses\SharedComponents\Vout.cs" />
+    <Compile Include="BitcoinLib\Responses\SignRawTransactionResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\SignRawTransactionWithKeyResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\SignRawTransactionWithWalletResponse.cs" />
+    <Compile Include="BitcoinLib\Responses\ValidateAddressResponse.cs" />
+    <Compile Include="BitcoinLib\RPC\Connector\IRpcConnector.cs" />
+    <Compile Include="BitcoinLib\RPC\Connector\RawRpcConnector.cs" />
+    <Compile Include="BitcoinLib\RPC\Connector\RpcConnector.cs" />
+    <Compile Include="BitcoinLib\RPC\RequestResponse\JsonRpcError.cs" />
+    <Compile Include="BitcoinLib\RPC\RequestResponse\JsonRpcRequest.cs" />
+    <Compile Include="BitcoinLib\RPC\RequestResponse\JsonRpcResponse.cs" />
+    <Compile Include="BitcoinLib\RPC\Specifications\RpcErrorCode.cs" />
+    <Compile Include="BitcoinLib\RPC\Specifications\RpcMethods.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Base\ICoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Bitcoin\BitcoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Bitcoin\IBitcoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Cryptocoin\CryptocoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Cryptocoin\ICryptocoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dallar\DallarService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dallar\IDallarService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dash\DashService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dash\IDashService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dogecoin\DogecoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Dogecoin\IDogecoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Litecoin\ILitecoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Litecoin\LitecoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Mogwaicoin\IMogwaicoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Mogwaicoin\MogwaicoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Sarcoin\ISarcoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Sarcoin\SarcoinService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Smartcash\ISmartcashService.cs" />
+    <Compile Include="BitcoinLib\Services\Coins\Smartcash\SmartcashService.cs" />
+    <Compile Include="BitcoinLib\Services\RpcServices\RpcExtenderService\IRpcExtenderService.cs" />
+    <Compile Include="BitcoinLib\Services\RpcServices\RpcExtenderService\RpcExtenderService.cs" />
+    <Compile Include="BitcoinLib\Services\RpcServices\RpcService\IRpcService.cs" />
+    <Compile Include="BitcoinLib\Services\RpcServices\RpcService\RpcService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

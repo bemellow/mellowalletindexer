@@ -1,0 +1,84 @@
+create table blocks(
+    id integer primary key,
+    hash text collate nocase,
+    previous_hash text collate nocase,
+    previous_blocks_id integer,
+    timestamp integer,
+    first_transaction_id integer,
+    transaction_count integer,
+    file_name text,
+    file_offset integer,
+    size_in_file integer
+);
+
+create index blocks_by_hash on blocks (hash);
+
+create table txs(
+    id integer primary key,
+    hash text collate nocase,
+    whash text collate nocase,
+    locktime integer,
+    blocks_id integer,
+    index_in_block integer,
+    input_count integer,
+    output_count integer
+);
+
+create index txs_by_hash on txs (hash);
+create index txs_by_blocks_id on txs (blocks_id);
+
+create table inputs(
+    id integer primary key,
+    previous_tx_id integer,
+    txo_index integer,
+    outputs_id integer,
+    txs_id integer,
+    txi_index integer
+);
+
+create index inputs_by_previous_tx_id on inputs (previous_tx_id); -- Create after initial indexing.
+create index inputs_by_txs_id on inputs (txs_id);                 -- Create after initial indexing.
+create index inputs_by_outputs_id on inputs (outputs_id);         -- Create after initial indexing.
+
+create table outputs(
+    id integer primary key,
+    txs_id integer,
+    txo_index integer,
+    value integer,
+    required_spenders integer,
+    script blob,
+    spent_by integer
+);
+
+create index outputs_by_txs_id on outputs (txs_id);
+create index outputs_by_txs_id_txo_index on outputs (txs_id, txo_index);
+
+create table addresses (
+    id integer primary key,
+    address text,
+    cached_balance integer
+);
+
+create index addresses_by_address on addresses (address);
+
+create table addresses_outputs (
+    addresses_id integer,
+    outputs_id integer
+);
+
+create index addresses_outputs_by_addresses_id on addresses_outputs (addresses_id); -- Create after initial indexing.
+create index addresses_outputs_by_outputs_id on addresses_outputs (outputs_id);
+
+create table addresses_txs (
+    addresses_id integer,
+    txs_id integer
+);
+
+create index addresses_txs_by_addresses_id on addresses_txs (addresses_id); -- Create after initial indexing.
+create index addresses_txs_by_txs_id on addresses_txs (txs_id); -- Create after initial indexing. (Required for chain reorganization.)
+
+create table blockchain_head (hash string);
+
+create table cached_balances (id integer primary key, balance integer);
+
+create table block_fees (id integer primary key, average_fee_per_kb integer);

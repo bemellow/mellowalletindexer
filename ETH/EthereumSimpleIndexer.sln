@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcpphelper", "bigint_cache\bigint_cache.vcxproj", "{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EthereumIndex", "EthereumIndex\EthereumIndex.csproj", "{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EthereumClasses", "EthereumClasses\EthereumClasses.csproj", "{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D} = {2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Debug|x64.ActiveCfg = Debug|x64
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Debug|x64.Build.0 = Debug|x64
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Debug|x86.ActiveCfg = Debug|Win32
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Debug|x86.Build.0 = Debug|Win32
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Release|x64.ActiveCfg = Release|x64
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Release|x64.Build.0 = Release|x64
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Release|x86.ActiveCfg = Release|Win32
+		{2DC6F9F5-AA16-461F-8F9B-B8D10D89876D}.Release|x86.Build.0 = Release|Win32
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Debug|x64.ActiveCfg = Debug|x64
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Debug|x64.Build.0 = Debug|x64
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Release|x64.ActiveCfg = Release|x64
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Release|x64.Build.0 = Release|x64
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE26DE5B-E646-4BBD-8DD8-10BC5CAF1CAB}.Release|x86.Build.0 = Release|Any CPU
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Debug|x64.ActiveCfg = Debug|x64
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Debug|x64.Build.0 = Debug|x64
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Release|x64.ActiveCfg = Release|x64
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Release|x64.Build.0 = Release|x64
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D8FD5388-2F8A-449D-9B8D-6A9FB76045BE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
